@@ -1,7 +1,7 @@
-from utils import instance_association
-from pathlib import Path
 import argparse
+from pathlib import Path
 
+from utils import instance_association
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -13,7 +13,7 @@ if __name__ == "__main__":
         help="Directory where images and segmentations were created.",
     )
     args = parser.parse_args()
-    extraction_dir = Path(args.output_dir)
+    extraction_dir = Path(args.images_and_segments_dir)
 
     # Instance segmentation for chloroplasts
     dist_dict = {"chloroplast": 10.0, "bundle sheath": 100.0}
